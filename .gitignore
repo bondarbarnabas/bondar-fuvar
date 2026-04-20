@@ -2,3 +2,11 @@
 .tmp/
 *.log
 node_modules/
+
+# Source screenshots & personal files (not for public deploy)
+Képernyőfotó*.png
+52C9286F-*.png
+AD15C7E3-*.jpeg
+CLAUDE (1).md
+brand
+

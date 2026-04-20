@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bondár Fuvar — Megbízható költöztetés határok nélkül</title>
+<meta name="description" content="Bondár Fuvar — professzionális lakás- és irodaköltöztetés, lomtalanítás, belföldi teherfuvar Tatabányáról. 35+ év tapasztalat, teljes körű biztosítás, ingyenes felmérés." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --navy: #1a2e4a;
+    --navy-deep: #0f1d33;
+    --navy-soft: #2a4264;
+    --cream: #f9f8f6;
+    --cream-warm: #f3efe7;
+    --gold: #c8962e;
+    --gold-light: #e0b14a;
+    --gold-deep: #a17821;
+    --ink: #14202f;
+    --muted: #6e7989;
+    --line: rgba(26, 46, 74, 0.12);
+
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --container: 1240px;
+    --gutter: clamp(20px, 4vw, 48px);
+  }
+
+  *,
+  *::before,
+  *::after { box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+  body{
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.6;
+    font-size: 16px;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  img{ max-width: 100%; display: block; }
+
+  a{ color: inherit; text-decoration: none; }
+
+  .container{
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+
+  .eyebrow{
+    font-family: var(--font-body);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .eyebrow::before{
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  h1, h2, h3, h4{
+    font-family: var(--font-display);
+    color: var(--navy);
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    line-height: 1.08;
+    margin: 0;
+    font-variation-settings: "opsz" 144;
+  }
+
+  h2{ font-size: clamp(34px, 5vw, 56px); }
+  h3{ font-size: clamp(22px, 2.4vw, 28px); font-weight: 500; }
+
+  p{ margin: 0; }
+
+  .section{
+    padding: clamp(80px, 11vw, 140px) 0;
+    position: relative;
+  }
+
+  /* ============ HEADER / NAV ============ */
+  .nav{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 18px 0;
+    transition: background .3s ease, backdrop-filter .3s ease, padding .3s ease, box-shadow .3s ease;
+  }
+  .nav.scrolled{
+    background: rgba(249, 248, 246, 0.92);
+    backdrop-filter: saturate(140%) blur(14px);
+    -webkit-backdrop-filter: saturate(140%) blur(14px);
+    padding: 10px 0;
+    box-shadow: 0 1px 0 var(--line);
+  }
+  .nav-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--navy);
+  }
+  .brand-logo{
+    height: 60px;
+    width: auto;
+    display: block;
+    transition: transform .4s cubic-bezier(.2,.8,.2,1), height .3s ease;
+  }
+  .brand:hover .brand-logo{ transform: translateX(-2px); }
+  .nav.scrolled .brand-logo{ height: 46px; }
+
+  .footer-brand .brand-logo{
+    height: 84px;
+    filter: invert(1) brightness(1.05);
+  }
+  .nav-links{
+    display: flex;
+    gap: 36px;
+    align-items: center;
+    list-style: none;
+    margin: 0; padding: 0;
+  }
+  .nav-links a{
+    font-size: 14px;
+    color: var(--navy);
+    font-weight: 500;
+    position: relative;
+    padding: 6px 0;
+    transition: color .2s ease;
+  }
+  .nav-links a::after{
+    content: "";
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 0; height: 1px;
+    background: var(--gold);
+    transition: width .3s ease;
+  }
+  .nav-links a:hover{ color: var(--gold-deep); }
+  .nav-links a:hover::after{ width: 100%; }
+
+  .menu-toggle{
+    display: none;
+    background: none; border: none;
+    width: 32px; height: 32px;
+    cursor: pointer;
+    padding: 0;
+  }
+  .menu-toggle span{
+    display: block;
+    width: 24px; height: 1.5px;
+    background: var(--navy);
+    margin: 6px auto;
+    transition: .3s;
+  }
+
+  /* ============ HERO ============ */
+  .hero{
+    min-height: 100vh;
+    padding-top: 120px;
+    position: relative;
+    background: var(--navy);
+    color: var(--cream);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  .hero-grid{
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: center;
+    width: 100%;
+  }
+  .hero-content{ position: relative; z-index: 2; }
+  .hero-eyebrow{ color: var(--gold-light); }
+  .hero-eyebrow::before{ background: var(--gold-light); }
+
+  .hero h1{
+    color: var(--cream);
+    font-size: clamp(44px, 7vw, 88px);
+    font-weight: 400;
+    margin: 28px 0 24px;
+    letter-spacing: -0.025em;
+  }
+  .hero h1 em{
+    font-style: italic;
+    color: var(--gold-light);
+    font-weight: 300;
+    font-variation-settings: "opsz" 144, "SOFT" 50;
+  }
+  .hero-tagline{
+    font-size: clamp(16px, 1.5vw, 19px);
+    color: rgba(249, 248, 246, 0.78);
+    max-width: 480px;
+    margin-bottom: 44px;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+  .hero-actions{
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 17px 32px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    transition: all .35s cubic-bezier(.2,.8,.2,1);
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary{
+    background: var(--gold);
+    color: var(--navy-deep);
+  }
+  .btn-primary:hover{
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -10px rgba(200, 150, 46, .55);
+  }
+  .btn-primary .arrow{
+    transition: transform .35s ease;
+  }
+  .btn-primary:hover .arrow{ transform: translateX(4px); }
+
+  .btn-ghost{
+    background: transparent;
+    color: var(--cream);
+    padding: 17px 0;
+    border-bottom: 1px solid rgba(249, 248, 246, 0.4);
+  }
+  .btn-ghost:hover{ color: var(--gold-light); border-bottom-color: var(--gold-light); }
+
+  .hero-visual{
+    position: relative;
+    aspect-ratio: 4 / 5;
+    max-height: 78vh;
+  }
+  .hero-image-wrap{
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    background: var(--navy-soft);
+  }
+  .hero-image-wrap img{
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: brightness(.92) contrast(1.05);
+    transition: transform 1.2s cubic-bezier(.2,.8,.2,1);
+  }
+  .hero:hover .hero-image-wrap img{ transform: scale(1.04); }
+
+  .hero-image-frame{
+    position: absolute;
+    top: 16px; left: 16px;
+    right: -16px; bottom: -16px;
+    border: 1px solid rgba(200, 150, 46, .6);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .hero-stat{
+    position: absolute;
+    bottom: 28px;
+    left: -32px;
+    background: var(--cream);
+    color: var(--navy);
+    padding: 22px 28px;
+    box-shadow: 0 24px 50px -20px rgba(0,0,0,.35);
+    z-index: 3;
+    max-width: 220px;
+  }
+  .hero-stat-num{
+    font-family: var(--font-display);
+    font-size: 44px;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--gold-deep);
+    display: block;
+  }
+  .hero-stat-label{
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+
+  /* Background decorative grid */
+  .hero-bg{
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 80% 0%, rgba(200, 150, 46, .12), transparent 55%),
+      radial-gradient(ellipse at 0% 100%, rgba(42, 66, 100, .8), transparent 60%);
+    pointer-events: none;
+  }
+  .hero-grid-lines{
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(249, 248, 246, .04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(249, 248, 246, .04) 1px, transparent 1px);
+    background-size: 80px 80px;
+    pointer-events: none;
+    mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
+  }
+
+  /* Marquee under hero */
+  .marquee{
+    background: var(--navy-deep);
+    color: var(--cream);
+    padding: 22px 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(249, 248, 246, .08);
+  }
+  .marquee-track{
+    display: flex;
+    gap: 60px;
+    width: max-content;
+    animation: scroll 38s linear infinite;
+    align-items: center;
+  }
+  .marquee-item{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 300;
+    color: rgba(249, 248, 246, .55);
+    white-space: nowrap;
+  }
+  .marquee-item span{ color: var(--gold-light); font-style: normal; font-family: var(--font-body); font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; }
+  @keyframes scroll{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(-50%); }
+  }
+
+  /* ============ SERVICES ============ */
+  .services{
+    background: var(--cream);
+  }
+  .section-head{
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: clamp(20px, 6vw, 80px);
+    align-items: end;
+    margin-bottom: clamp(50px, 7vw, 90px);
+  }
+  .section-head h2{ max-width: 14ch; }
+  .section-head .lead{
+    color: var(--muted);
+    font-size: clamp(15px, 1.2vw, 17px);
+    max-width: 56ch;
+    line-height: 1.7;
+  }
+
+  .services-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .service-card{
+    background: var(--cream);
+    padding: 48px 40px 44px;
+    position: relative;
+    transition: background .4s ease;
+    cursor: pointer;
+  }
+  .service-card:hover{
+    background: var(--cream-warm);
+  }
+  .service-icon{
+    width: 64px; height: 64px;
+    border: 1px solid var(--gold);
+    color: var(--gold-deep);
+    display: grid; place-items: center;
+    margin-bottom: 32px;
+    transition: all .4s ease;
+  }
+  .service-card:hover .service-icon{
+    background: var(--gold);
+    color: var(--cream);
+    transform: rotate(-6deg);
+  }
+  .service-icon svg{ width: 28px; height: 28px; }
+
+  .service-num{
+    position: absolute;
+    top: 24px; right: 28px;
+    font-family: var(--font-display);
+    font-size: 14px;
+    color: var(--gold-deep);
+    letter-spacing: 0.1em;
+  }
+  .service-card h3{
+    font-size: 26px;
+    margin-bottom: 14px;
+  }
+  .service-card p{
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 26px;
+  }
+  .service-link{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--navy);
+    transition: gap .3s ease, color .3s ease;
+  }
+  .service-card:hover .service-link{
+    gap: 14px;
+    color: var(--gold-deep);
+  }
+
+  /* ============ ABOUT / FOUNDER ============ */
+  .about{
+    background: var(--cream-warm);
+    position: relative;
+    overflow: hidden;
+  }
+  .about-grid{
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: clamp(40px, 7vw, 100px);
+    align-items: center;
+  }
+  .about-visual{
+    position: relative;
+    aspect-ratio: 4 / 5;
+    background: var(--navy);
+    overflow: hidden;
+  }
+  .about-visual::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 100% 0%, rgba(200, 150, 46, .25), transparent 55%),
+      linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+  }
+  .about-visual img{
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    object-fit: contain;
+    object-position: center;
+    padding: 36px;
+    filter: drop-shadow(0 22px 40px rgba(0,0,0,.45));
+    transition: transform 1s cubic-bezier(.2,.8,.2,1);
+  }
+  .about-visual:hover img{ transform: translateX(-8px) scale(1.03); }
+  .about-since{
+    position: absolute;
+    top: 28px; left: 28px;
+    color: var(--gold-light);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 17px;
+    letter-spacing: 0.04em;
+    z-index: 2;
+  }
+  .about-since strong{
+    display: block;
+    font-style: normal;
+    font-family: var(--font-body);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(249, 248, 246, .55);
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+  .about-frame{
+    position: absolute;
+    bottom: -14px; right: -14px;
+    width: 60%; height: 70%;
+    border-bottom: 1px solid var(--gold);
+    border-right: 1px solid var(--gold);
+    pointer-events: none;
+  }
+
+  .about-content h2{
+    font-size: clamp(34px, 4.5vw, 52px);
+    margin-bottom: 28px;
+  }
+  .about-content h2 em{
+    font-style: italic;
+    color: var(--gold-deep);
+    font-weight: 300;
+  }
+  .about-lead{
+    font-family: var(--font-display);
+    font-size: clamp(18px, 1.6vw, 22px);
+    font-weight: 400;
+    color: var(--navy);
+    line-height: 1.5;
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+  .about-content p{
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.75;
+    margin-bottom: 18px;
+    max-width: 56ch;
+  }
+  .about-quote{
+    margin: 36px 0 32px;
+    padding: 26px 0 26px 28px;
+    border-left: 2px solid var(--gold);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(20px, 2vw, 26px);
+    line-height: 1.4;
+    color: var(--navy);
+    font-weight: 400;
+    max-width: 32ch;
+  }
+  .about-stats{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 44px;
+    margin-top: 36px;
+    padding-top: 36px;
+    border-top: 1px solid var(--line);
+  }
+  .about-stat-num{
+    font-family: var(--font-display);
+    font-size: clamp(34px, 4vw, 46px);
+    font-weight: 500;
+    color: var(--gold-deep);
+    line-height: 1;
+    display: block;
+  }
+  .about-stat-label{
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+
+  /* ============ WHY US ============ */
+  .why{
+    background: var(--navy);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+  .why::before{
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: .5;
+  }
+  .why h2{ color: var(--cream); }
+  .why .lead{ color: rgba(249, 248, 246, .7); }
+  .why .eyebrow{ color: var(--gold-light); }
+  .why .eyebrow::before{ background: var(--gold-light); }
+
+  .badges{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid rgba(249, 248, 246, .12);
+    border-bottom: 1px solid rgba(249, 248, 246, .12);
+    margin-bottom: 80px;
+  }
+  .badge{
+    padding: 44px 32px;
+    border-right: 1px solid rgba(249, 248, 246, .12);
+    position: relative;
+  }
+  .badge:last-child{ border-right: none; }
+  .badge-num{
+    font-family: var(--font-display);
+    font-size: 13px;
+    color: var(--gold-light);
+    letter-spacing: 0.12em;
+    margin-bottom: 18px;
+  }
+  .badge-title{
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 10px;
+    color: var(--cream);
+  }
+  .badge-desc{
+    font-size: 14px;
+    color: rgba(249, 248, 246, .6);
+    line-height: 1.6;
+  }
+
+  .gallery{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .gallery-item{
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    position: relative;
+    background: var(--navy-soft);
+  }
+  .gallery-item:nth-child(2){
+    margin-top: 50px;
+  }
+  .gallery-item img{
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 1s cubic-bezier(.2,.8,.2,1), filter .6s ease;
+    filter: brightness(.85) saturate(.92);
+  }
+  .gallery-item:hover img{
+    transform: scale(1.06);
+    filter: brightness(1) saturate(1);
+  }
+  .gallery-item::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 29, 51, .55), transparent 50%);
+    pointer-events: none;
+  }
+  .gallery-caption{
+    position: absolute;
+    bottom: 18px; left: 22px;
+    color: var(--cream);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 15px;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity .4s ease, transform .4s ease;
+  }
+  .gallery-item:hover .gallery-caption{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ============ TESTIMONIALS ============ */
+  .testimonials{
+    background: var(--cream-warm);
+    position: relative;
+  }
+  .testimonials .section-head{ margin-bottom: 70px; }
+
+  .reviews{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+  .review{
+    background: var(--cream);
+    padding: 40px 36px 36px;
+    position: relative;
+    border: 1px solid var(--line);
+    transition: transform .4s ease, box-shadow .4s ease;
+  }
+  .review:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 28px 50px -28px rgba(26, 46, 74, .25);
+  }
+  .review-quote{
+    position: absolute;
+    top: -22px; left: 28px;
+    font-family: var(--font-display);
+    font-size: 80px;
+    color: var(--gold);
+    line-height: 1;
+    font-weight: 500;
+  }
+  .stars{
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-size: 15px;
+  }
+  .review-text{
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.55;
+    color: var(--navy);
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+  .review-author{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+  }
+  .author-avatar{
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--cream);
+    display: grid; place-items: center;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 17px;
+  }
+  .author-name{
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--navy);
+    letter-spacing: 0.01em;
+  }
+  .author-role{
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* ============ CONTACT ============ */
+  .contact{
+    background: var(--cream);
+  }
+  .contact-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: start;
+  }
+  .contact-info h2{
+    margin-bottom: 28px;
+  }
+  .contact-info p{
+    color: var(--muted);
+    margin-bottom: 44px;
+    max-width: 44ch;
+    line-height: 1.7;
+  }
+  .contact-list{
+    list-style: none;
+    padding: 0; margin: 0 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .contact-item{
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+  }
+  .contact-item-icon{
+    width: 42px; height: 42px;
+    border: 1px solid var(--gold);
+    color: var(--gold-deep);
+    display: grid; place-items: center;
+    flex-shrink: 0;
+  }
+  .contact-item-icon svg{ width: 18px; height: 18px; }
+  .contact-item-label{
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .contact-item-value{
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--navy);
+    font-weight: 500;
+    transition: color .2s ease;
+  }
+  a.contact-item-value:hover{ color: var(--gold-deep); }
+
+  .map-wrap{
+    margin-top: 16px;
+    border: 1px solid var(--line);
+    overflow: hidden;
+    height: 220px;
+  }
+  .map-wrap iframe{
+    width: 100%; height: 100%;
+    border: 0;
+    filter: grayscale(.3) contrast(1.05);
+  }
+
+  .form{
+    background: var(--navy);
+    color: var(--cream);
+    padding: 50px 44px;
+    position: relative;
+  }
+  .form::before{
+    content: "";
+    position: absolute;
+    top: -12px; right: -12px;
+    width: 80px; height: 80px;
+    border-top: 2px solid var(--gold);
+    border-right: 2px solid var(--gold);
+    pointer-events: none;
+  }
+  .form h3{
+    color: var(--cream);
+    font-size: 28px;
+    margin-bottom: 28px;
+  }
+  .form-row{ margin-bottom: 22px; }
+  .form-row.cols{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 22px;
+  }
+  .form-row label{
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: rgba(249, 248, 246, .6);
+    margin-bottom: 8px;
+  }
+  .form-row input,
+  .form-row textarea{
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(249, 248, 246, .25);
+    padding: 12px 0 14px;
+    color: var(--cream);
+    font-family: var(--font-body);
+    font-size: 15px;
+    outline: none;
+    transition: border-color .2s ease;
+  }
+  .form-row input:focus,
+  .form-row textarea:focus{
+    border-bottom-color: var(--gold-light);
+  }
+  .form-row textarea{
+    resize: vertical;
+    min-height: 110px;
+  }
+  .form-row input::placeholder,
+  .form-row textarea::placeholder{
+    color: rgba(249, 248, 246, .35);
+  }
+
+  .form .btn{
+    width: 100%;
+    justify-content: center;
+    margin-top: 14px;
+  }
+  .form-success{
+    background: rgba(200, 150, 46, .12);
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    padding: 18px 22px;
+    margin-top: 18px;
+    font-size: 14px;
+    display: none;
+    text-align: center;
+    line-height: 1.5;
+  }
+  .form-success.visible{ display: block; }
+
+  /* ============ FOOTER ============ */
+  footer{
+    background: var(--navy-deep);
+    color: rgba(249, 248, 246, .65);
+    padding: 70px 0 30px;
+  }
+  .footer-grid{
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+  }
+  .footer-tagline{
+    margin-top: 18px;
+    max-width: 32ch;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .footer-col h4{
+    color: var(--cream);
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    margin-bottom: 22px;
+  }
+  .footer-col ul{
+    list-style: none;
+    padding: 0; margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .footer-col a{
+    font-size: 14px;
+    transition: color .2s ease;
+  }
+  .footer-col a:hover{ color: var(--gold-light); }
+
+  .footer-bottom{
+    padding-top: 28px;
+    border-top: 1px solid rgba(249, 248, 246, .08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: rgba(249, 248, 246, .45);
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .footer-bottom em{
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  /* ============ SCROLL ANIMATIONS ============ */
+  .reveal{
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .9s cubic-bezier(.2,.8,.2,1), transform .9s cubic-bezier(.2,.8,.2,1);
+  }
+  .reveal.visible{
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal.delay-1{ transition-delay: .1s; }
+  .reveal.delay-2{ transition-delay: .2s; }
+  .reveal.delay-3{ transition-delay: .3s; }
+  .reveal.delay-4{ transition-delay: .4s; }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 960px){
+    .hero-grid{ grid-template-columns: 1fr; }
+    .hero-visual{ aspect-ratio: 5 / 4; max-height: 420px; }
+    .hero-stat{ left: -16px; }
+    .section-head{ grid-template-columns: 1fr; gap: 24px; }
+    .services-grid{ grid-template-columns: 1fr; }
+    .badges{ grid-template-columns: 1fr 1fr; }
+    .badge:nth-child(2){ border-right: none; }
+    .badge:nth-child(1), .badge:nth-child(2){ border-bottom: 1px solid rgba(249, 248, 246, .12); }
+    .gallery{ grid-template-columns: 1fr 1fr; gap: 12px; }
+    .gallery-item:nth-child(2){ margin-top: 0; }
+    .gallery-item:nth-child(3){ display: none; }
+    .about-grid{ grid-template-columns: 1fr; }
+    .about-visual{ aspect-ratio: 5 / 4; max-height: 420px; }
+    .about-stats{ gap: 28px; }
+    .reviews{ grid-template-columns: 1fr; }
+    .contact-grid{ grid-template-columns: 1fr; }
+    .footer-grid{ grid-template-columns: 1fr; gap: 40px; margin-bottom: 40px; }
+    .nav-links{
+      position: fixed;
+      top: 70px; left: 0; right: 0;
+      background: var(--cream);
+      flex-direction: column;
+      padding: 30px;
+      gap: 20px;
+      transform: translateY(-150%);
+      transition: transform .35s ease;
+      box-shadow: 0 14px 30px -10px rgba(0,0,0,.15);
+    }
+    .nav-links.open{ transform: translateY(0); }
+    .menu-toggle{ display: block; }
+  }
+  @media (max-width: 560px){
+    .about-stats{ grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .about-stat-num{ font-size: 30px; }
+    .badges{ grid-template-columns: 1fr; }
+    .badge{ border-right: none; border-bottom: 1px solid rgba(249, 248, 246, .12); }
+    .badge:last-child{ border-bottom: none; }
+    .gallery{ grid-template-columns: 1fr; }
+    .gallery-item{ margin-top: 0 !important; }
+    .form{ padding: 36px 26px; }
+    .form-row.cols{ grid-template-columns: 1fr; }
+    .footer-bottom{ flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- =================== NAV =================== -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="brand" aria-label="Bondár Fuvar — Kezdőlap">
+      <img src="images/logo.png" alt="Bondár Fuvar" class="brand-logo" />
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menü megnyitása">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#szolgaltatasok">Szolgáltatások</a></li>
+      <li><a href="#rolam">Rólam</a></li>
+      <li><a href="#miert-mi">Miért mi?</a></li>
+      <li><a href="#velemenyek">Vélemények</a></li>
+      <li><a href="#kapcsolat">Kapcsolat</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- =================== HERO =================== -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="container hero-grid">
+    <div class="hero-content reveal">
+      <span class="eyebrow hero-eyebrow">Költöztetés &nbsp;·&nbsp; 1980-as évek óta</span>
+      <h1>Megbízható<br/>költöztetés <em>határok</em><br/>nélkül.</h1>
+      <p class="hero-tagline">
+        Költöztetés, teherfuvarozás és lomtalanítás Tatabányáról —
+        átlátható árakkal, ütemezetten dolgozó csapattal. Belföldön,
+        csomagolástól a kipakolásig.
+      </p>
+      <div class="hero-actions">
+        <a href="#kapcsolat" class="btn btn-primary">
+          Kérjen ajánlatot
+          <svg class="arrow" width="16" height="12" viewBox="0 0 16 12" fill="none">
+            <path d="M1 6h13M9 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+          </svg>
+        </a>
+        <a href="#szolgaltatasok" class="btn btn-ghost">Szolgáltatásaink</a>
+      </div>
+    </div>
+    <div class="hero-visual reveal delay-2">
+      <div class="hero-image-frame"></div>
+      <div class="hero-image-wrap">
+        <img src="images/work-1.jpeg" alt="A Bondár Fuvar csapata zongorát szállít egy költöztetés során" />
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">35+</span>
+        <span class="hero-stat-label">Év tapasztalat</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== MARQUEE =================== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-item">Lakásköltöztetés <span>★</span> Irodaköltöztetés <span>★</span> Lomtalanítás <span>★</span> Belföldi teherfuvar <span>★</span> Bútorszerelés <span>★</span> Csomagolóanyag <span>★</span></div>
+    <div class="marquee-item">Lakásköltöztetés <span>★</span> Irodaköltöztetés <span>★</span> Lomtalanítás <span>★</span> Belföldi teherfuvar <span>★</span> Bútorszerelés <span>★</span> Csomagolóanyag <span>★</span></div>
+  </div>
+</div>
+
+<!-- =================== SERVICES =================== -->
+<section class="section services" id="szolgaltatasok">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Szolgáltatásaink</span>
+        <h2 style="margin-top:20px;">Amit a Bondár Fuvar kínál</h2>
+      </div>
+      <p class="lead">
+        Négy fókuszterület, egyetlen mérce: a precíz, határidőre teljesített
+        munka. Akár egyszobás lakást költöztet, akár egy padlást ürít ki —
+        a folyamat ugyanolyan átgondolt és átlátható árú.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card reveal delay-1">
+        <span class="service-num">01 / Lakás</span>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12 12 4l9 8M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+        </div>
+        <h3>Lakásköltöztetés</h3>
+        <p>Garzontól a többszintes házig. Csomagolás, biztonságos szállítás, kipakolás és bútorösszeszerelés egy kézből — Önnek nem kell mást, csak az új otthont élveznie.</p>
+        <span class="service-link">Részletek <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span>
+      </article>
+
+      <article class="service-card reveal delay-2">
+        <span class="service-num">02 / Iroda</span>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 21V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v16"/><path d="M4 21h16M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg>
+        </div>
+        <h3>Irodaköltöztetés</h3>
+        <p>Hétvégi vagy éjszakai ütemezéssel, hogy a vállalkozás működése zavartalan maradjon. Szerverek, tárgyalók, archívum — mindent dokumentált rendszerben mozgatunk.</p>
+        <span class="service-link">Részletek <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span>
+      </article>
+
+      <article class="service-card reveal delay-3">
+        <span class="service-num">03 / Teherfuvar</span>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17V7a1 1 0 0 1 1-1h11v11"/><path d="M15 11h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+        </div>
+        <h3>Belföldi teherfuvar</h3>
+        <p>Egyszeri szállítások, bútor- és gépszállítás, üzleti rakományok mozgatása Tatabányáról az ország bármely pontjára — pontos időre, korrekt áron.</p>
+        <span class="service-link">Részletek <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span>
+      </article>
+
+      <article class="service-card reveal delay-4">
+        <span class="service-num">04 / Lomtalanítás</span>
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M5 6l1 14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2l1-14"/><path d="M10 11v6M14 11v6"/></svg>
+        </div>
+        <h3>Lomtalanítás</h3>
+        <p>Pince, padlás, garázs, hagyaték — gyors és diszkrét ürítés, szelektív elszállítással. Vállalunk teljes lakáskiürítést és építési törmelék elszállítását is.</p>
+        <span class="service-link">Részletek <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =================== ABOUT =================== -->
+<section class="section about" id="rolam">
+  <div class="container about-grid">
+    <div class="about-visual reveal">
+      <div class="about-since">
+        <strong>Fuvarozó</strong>
+        1998 óta
+      </div>
+      <img src="images/truck.png" alt="Bondár Lajos saját teherautója" />
+      <div class="about-frame"></div>
+    </div>
+    <div class="about-content reveal delay-1">
+      <span class="eyebrow">Rólam</span>
+      <h2 style="margin-top:20px;">Bondár Lajos vagyok — <em>fuvarozó.</em></h2>
+      <p class="about-lead">
+        Vállalkozásomat 1998-ban indítottam, de édesapám mellett — aki
+        szintén fuvarozó — már a 80-as évek vége óta gyűjtöm a tapasztalatokat.
+      </p>
+      <p>
+        Vállalkozásomra a <strong>gyorsaság, pontosság és megbízhatóság</strong>
+        jellemző. Fő profilunk a költöztetés, de vállaljuk a költöztetés
+        előtti csomagolást, irodaköltöztetést, lomtalanítást és belföldi
+        teherfuvarozást is.
+      </p>
+      <p>
+        Nem ijedünk meg az extrém helyzetektől sem. Ha nem fér be az
+        ajtón, felhúzzuk az ablakon keresztül.
+      </p>
+      <blockquote class="about-quote">
+        „Lakáson kívül bútort még nem hagytunk."
+      </blockquote>
+      <div class="about-stats">
+        <div>
+          <span class="about-stat-num">1998</span>
+          <span class="about-stat-label">Indulás éve</span>
+        </div>
+        <div>
+          <span class="about-stat-num">35+</span>
+          <span class="about-stat-label">Év tapasztalat</span>
+        </div>
+        <div>
+          <span class="about-stat-num">100%</span>
+          <span class="about-stat-label">Beért bútor</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== WHY US =================== -->
+<section class="section why" id="miert-mi">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Miért minket válasszon</span>
+        <h2 style="margin-top:20px;">A bizalom a&nbsp;legdrágább rakomány.</h2>
+      </div>
+      <p class="lead">
+        Egy költöztetés nem csak dobozok mozgatása — hanem évtizedek
+        emléke, fontos iratok és mindennapi élet. Ezért úgy dolgozunk,
+        mintha a saját otthonunkat pakolnánk.
+      </p>
+    </div>
+
+    <div class="badges reveal">
+      <div class="badge">
+        <div class="badge-num">01</div>
+        <div class="badge-title">35+&nbsp;év tapasztalat</div>
+        <div class="badge-desc">Az 1980-as évek vége óta a szakmában — több ezer sikeres költöztetés.</div>
+      </div>
+      <div class="badge">
+        <div class="badge-num">02</div>
+        <div class="badge-title">Teljes körű biztosítás</div>
+        <div class="badge-desc">Minden szállított tárgyra kiterjedő, fedezett biztosítás.</div>
+      </div>
+      <div class="badge">
+        <div class="badge-num">03</div>
+        <div class="badge-title">Ingyenes felmérés</div>
+        <div class="badge-desc">Helyszíni vagy online felmérés, kötelezettség nélkül.</div>
+      </div>
+      <div class="badge">
+        <div class="badge-num">04</div>
+        <div class="badge-title">Pontos&nbsp;ár, pontos&nbsp;idő</div>
+        <div class="badge-desc">Átlátható ajánlat, garantált határidő — meglepetések nélkül.</div>
+      </div>
+    </div>
+
+    <div class="gallery reveal">
+      <figure class="gallery-item">
+        <img src="images/work-2.jpeg" alt="Bondár Fuvar teherautója rakodva — bebugyolált bútorok útra készen" />
+        <figcaption class="gallery-caption">Rögzített rakomány — semmi sem mozdul el</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="images/work-3.jpeg" alt="Két szállító egy nagyméretű hűtőszekrényt mozgat" />
+        <figcaption class="gallery-caption">Nagy méretű háztartási gépek</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <img src="images/work-4.jpeg" alt="A Bondár Fuvar csapata bútort visz fel a lépcsőházban" />
+        <figcaption class="gallery-caption">Lépcsőzés — összehangolt csapatmunka</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- =================== TESTIMONIALS =================== -->
+<section class="section testimonials" id="velemenyek">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">Rólunk mondták</span>
+        <h2 style="margin-top:20px;">Ügyfeleink&nbsp;szavai.</h2>
+      </div>
+      <p class="lead">
+        Több száz öt csillagos értékelés és visszatérő ügyfelek — mert
+        a jó költöztetés olyan, amire utólag egyáltalán nem kell
+        gondolni.
+      </p>
+    </div>
+
+    <div class="reviews">
+      <article class="review reveal delay-1">
+        <span class="review-quote">"</span>
+        <div class="stars" aria-label="5 csillagos értékelés">★★★★★</div>
+        <p class="review-text">Négy emelet, egy hétvége, két város — és mégis nyugodtan aludtam. A csapat percre pontosan érkezett, mindenre figyeltek, semmi sem sérült. Ritka az ilyen profizmus.</p>
+        <div class="review-author">
+          <div class="author-avatar">KE</div>
+          <div>
+            <div class="author-name">Kovács Eszter</div>
+            <div class="author-role">Tatabánya → Budapest</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="review reveal delay-2">
+        <span class="review-quote">"</span>
+        <div class="stars" aria-label="5 csillagos értékelés">★★★★★</div>
+        <p class="review-text">22 fős irodát költöztettünk egy szombat alatt, hétfő reggel mindenki a saját asztalánál ült. Az árajánlat pontosan annyi volt, amennyit a végén fizettünk. Ajánlom őket bárkinek.</p>
+        <div class="review-author">
+          <div class="author-avatar">NT</div>
+          <div>
+            <div class="author-name">Nagy Tamás</div>
+            <div class="author-role">Ügyvezető, Tatabánya</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="review reveal delay-3">
+        <span class="review-quote">"</span>
+        <div class="stars" aria-label="5 csillagos értékelés">★★★★★</div>
+        <p class="review-text">Édesapám hagyatékát kellett kiüríteni — fájdalmas folyamat volt. A Bondár csapata diszkréten, türelemmel dolgozott, az értékeket külön válogatták, a többit elszállították. Hálásan köszönöm.</p>
+        <div class="review-author">
+          <div class="author-avatar">SZA</div>
+          <div>
+            <div class="author-name">Szabó Anita</div>
+            <div class="author-role">Lomtalanítás, Tatabánya</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =================== CONTACT =================== -->
+<section class="section contact" id="kapcsolat">
+  <div class="container contact-grid">
+    <div class="contact-info reveal">
+      <span class="eyebrow">Kapcsolat</span>
+      <h2 style="margin-top:20px;">Beszéljünk a&nbsp;költözéséről.</h2>
+      <p>Töltse ki az űrlapot vagy hívjon közvetlenül — 24 órán belül személyes ajánlattal jelentkezünk.</p>
+
+      <ul class="contact-list">
+        <li class="contact-item">
+          <div class="contact-item-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Telefon</div>
+            <a href="tel:+36309564500" class="contact-item-value">+36 30 956 4500</a>
+          </div>
+        </li>
+        <li class="contact-item">
+          <div class="contact-item-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7L22 6"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <a href="mailto:bondarfuvar@gmail.com" class="contact-item-value">bondarfuvar@gmail.com</a>
+          </div>
+        </li>
+        <li class="contact-item">
+          <div class="contact-item-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a8 8 0 0 1 8 8c0 5.5-8 12-8 12S4 15.5 4 10a8 8 0 0 1 8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Székhely</div>
+            <span class="contact-item-value">Tatabánya, Cseresznyefa utca 83.</span>
+          </div>
+        </li>
+      </ul>
+
+      <div class="map-wrap">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=18.36%2C47.55%2C18.48%2C47.61&amp;layer=mapnik&amp;marker=47.5800%2C18.4200"
+          loading="lazy"
+          title="Bondár Fuvar — Tatabánya, Cseresznyefa utca 83.">
+        </iframe>
+      </div>
+    </div>
+
+    <form class="form reveal delay-2" id="contactForm" novalidate>
+      <h3>Kérjen ingyenes ajánlatot</h3>
+      <div class="form-row cols">
+        <div>
+          <label for="name">Név</label>
+          <input id="name" name="name" type="text" placeholder="Vezeték- és keresztnév" required />
+        </div>
+        <div>
+          <label for="phone">Telefonszám</label>
+          <input id="phone" name="phone" type="tel" placeholder="+36 ..." required />
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="pelda@email.hu" required />
+      </div>
+      <div class="form-row">
+        <label for="message">Üzenet</label>
+        <textarea id="message" name="message" placeholder="Honnan, hová, mikor és körülbelül mit szeretne költöztetni?" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">
+        Küldés
+        <svg class="arrow" width="16" height="12" viewBox="0 0 16 12" fill="none">
+          <path d="M1 6h13M9 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+        </svg>
+      </button>
+      <div class="form-success" id="formSuccess">
+        Köszönjük üzenetét! 24 órán belül felvesszük Önnel a kapcsolatot.
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="brand">
+          <img src="images/logo.png" alt="Bondár Fuvar" class="brand-logo" />
+        </a>
+        <p class="footer-tagline">
+          Megbízható költöztetés, teherfuvarozás és lomtalanítás Tatabányáról — belföldön, az 1980-as évek vége óta.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigáció</h4>
+        <ul>
+          <li><a href="#szolgaltatasok">Szolgáltatások</a></li>
+          <li><a href="#miert-mi">Miért mi?</a></li>
+          <li><a href="#velemenyek">Vélemények</a></li>
+          <li><a href="#kapcsolat">Kapcsolat</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kapcsolat</h4>
+        <ul>
+          <li><a href="tel:+36309564500">+36 30 956 4500</a></li>
+          <li><a href="mailto:bondarfuvar@gmail.com">bondarfuvar@gmail.com</a></li>
+          <li>Tatabánya, Cseresznyefa u. 83.</li>
+          <li>H–Szo: 7:00 – 20:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Bondár Fuvar — Minden jog fenntartva.</span>
+      <span>Készült <em>gondossággal</em> Tatabányán.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ============== Nav scroll state ==============
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    if (window.scrollY > 30) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // ============== Mobile menu ==============
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => navLinks.classList.remove('open'))
+  );
+
+  // ============== Reveal on scroll ==============
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  revealEls.forEach(el => io.observe(el));
+
+  // ============== Contact form ==============
+  const form = document.getElementById('contactForm');
+  const successBox = document.getElementById('formSuccess');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    successBox.classList.add('visible');
+    form.reset();
+    setTimeout(() => successBox.classList.remove('visible'), 6000);
+  });
+</script>
+
+</body>
+</html>
